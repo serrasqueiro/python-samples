@@ -13,17 +13,36 @@
 # limitations under the License.
 
 # [START drive_quickstart]
+
 from __future__ import print_function
+import sys
 import pickle
 import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
+CREDENTIALS = 'credentials.json'
+
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
 
+
 def main():
+    priv_cred = CREDENTIALS
+    args = sys.argv[1:]
+    if args:
+        path = args[0]
+        if os.path.isdir(path):
+            priv_cred = os.path.join(path, priv_cred)
+        else:
+            priv_cred = path
+        del args[0]
+    assert not args
+    runner(priv_cred)
+
+
+def runner(priv_cred):
     """Shows basic usage of the Drive v3 API.
     Prints the names and ids of the first 10 files the user has access to.
     """
@@ -40,7 +59,7 @@ def main():
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                priv_cred, SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:
