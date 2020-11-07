@@ -1,5 +1,14 @@
 # Google Workspace Python Samples [![Build Status](https://travis-ci.org/gsuitedevs/python-samples.svg?branch=master)](https://travis-ci.org/gsuitedevs/python-samples)
 
+Forked from [googleworkspace/ python-samples](https://github.com/googleworkspace/python-samples)
+- hint, see below
+```
+git remote add upstream git@github.com:googleworkspace/python-samples.git
+git fetch upstream
+```
+- referenced by [Google Drive API v3](https://developers.google.com/drive/api/v3/quickstart/python)
+
+
 Python samples for [Google Workspace APIs](https://developers.google.com/gsuite/) docs.
 
 ## APIs
