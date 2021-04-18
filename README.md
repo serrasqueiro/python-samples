@@ -1,4 +1,4 @@
-# Google Workspace Python Samples [![Build Status](https://travis-ci.org/gsuitedevs/python-samples.svg?branch=master)](https://travis-ci.org/gsuitedevs/python-samples)
+# Google Workspace Python Samples [![Build Status](https://travis-ci.org/googleworkspace/python-samples.svg?branch=master)](https://travis-ci.org/googleworkspace/python-samples)
 
 Forked from [googleworkspace/ python-samples](https://github.com/googleworkspace/python-samples)
 - hint, see below
